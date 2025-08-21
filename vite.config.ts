@@ -5,9 +5,11 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // VM optimized server settings
   server: {
-    host: "::",
-    port: 8080,
+    host: "0.0.0.0",     // Required for VM
+    port: 3000,          // Standard port
+    allowedHosts: true,  // Better VM networking
   },
   plugins: [
     react(),
